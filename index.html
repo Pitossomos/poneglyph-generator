@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Poneglyph Generator</title>
+	<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+	<h1>Poneglyph Generator</h1>
+
+	<div class="note">
+    <p>
+      This code uses a custom font called <i>Poneglyph.ttf</i> shared by
+        <a href="https://www.reddit.com/r/OnePiece/comments/9hyc1g/poneglyph_font_ttf_file/">Killiam Frost at Reddit</a>.
+    </p>
+    <p>
+      See code repository and sugest improvements at:
+      <img src="./assets/github-mark.svg" width="16" height="16" alt="GitHub Logo"/>
+      <a href="https://github.com/Pitossomos/poneglyph-generator">GitHub Repository</a>
+    </p>
+  </div>
+
+  <main class="wrapper-div">
+    <textarea id="input" placeholder="Type or paste text here..." rows="6"></textarea>
+    <div id="result" class="poneglyph" aria-live="polite"></div>
+  </main>
+
+  <div class="buttons">
+    <button id="randomizeBtn">Randomize</button>
+    <button id="quoteBtn">One Piece quote</button>
+    <button id="processBtn">Generate Poneglyph</button>
+  </div>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>
+
