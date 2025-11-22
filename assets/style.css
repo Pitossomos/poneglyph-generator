@@ -1,0 +1,84 @@
+@font-face {
+  font-family: 'Poneglyph';
+  src: url('Poneglyph.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 24px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image:
+    url('./sandwall.jpg'),
+    linear-gradient(rgba(245,240,230,0.72), rgba(235,225,205,0.72));
+  background-blend-mode: overlay, saturation;
+  background-attachment: fixed;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+.wrapper-div {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 20px;
+  align-items: center;
+}
+
+textarea {
+  width: 40%;
+  margin: 20px 10px;
+  min-height: 160px;
+  font-size: 16px;
+  padding: 10px;
+  box-sizing: content-box;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  line-break: anywhere;
+}
+
+#result {
+  width: 40%;
+  min-height: 140px;
+  font-size: 48px;
+  margin: 20px 10px;
+  padding: 14px;
+  color: azure;
+  background-color: #000080;
+  border-width: 8px;
+  border-style: ridge;
+  border-color: midnightblue;
+  line-break: anywhere;
+  text-align: center;
+  font-family: 'Poneglyph';
+  font-size: 20px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 8px 14px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.note {
+  padding: 10px;
+  margin: 12px 0;
+  background-color: rgba(255,255,255,0.6);
+  font-size: 14px;
+}
