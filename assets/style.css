@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Poneglyph';
-  src: url('Poneglyph.ttf') format('truetype');
+  src: url('../font/Poneglyph.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -9,19 +9,28 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   padding: 24px;
-  margin: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-image:
-    url('./sandwall.jpg'),
+    url('../img/sandwall.jpg'),
     linear-gradient(rgba(245,240,230,0.72), rgba(235,225,205,0.72));
   background-blend-mode: overlay, saturation;
   background-attachment: fixed;
 }
 
-h1 {
-  margin-top: 0;
+.navbar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 128, 0.8);
+  color: azure;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .wrapper-div {
