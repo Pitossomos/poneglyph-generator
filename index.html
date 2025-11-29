@@ -3,12 +3,12 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>Poneglyph Generator</title>
+	<title></title>
 	<link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
   <nav class="navbar" role="navigation" aria-label="Main navigation">
-    <h1 id="title">Poneglyph Generator</h1>
+    <h1 id="title"></h1>
 
     <div class="lang-controls" role="group" aria-label="Language selection">
       <button id="lang-br" class="lang-btn" data-lang="pt-BR" aria-pressed="false" title="Português (BR)" aria-label="Português do Brasil">
@@ -21,12 +21,8 @@
   </nav>
 
     <div class="note">
-      <p id="note-font">
-        This code uses a custom font called <i>Poneglyph.ttf</i> shared by
-          <a href="https://www.reddit.com/r/OnePiece/comments/9hyc1g/poneglyph_font_ttf_file/" target="_blank" rel="noopener">Killiam Frost at Reddit</a>.
-      </p>
+      <p id="note-font"></p>
       <p id="note-repo">
-        See code repository and sugest improvements at:
         <img src="./icons/github-mark.svg" width="16" height="16" alt="GitHub Logo"/>
         <a href="https://github.com/Pitossomos/poneglyph-generator" target="_blank" rel="noopener">GitHub Repository</a>
       </p>
@@ -37,10 +33,11 @@
       <div id="result" class="poneglyph" aria-live="polite"></div>
     </main>
 
-  <div class="buttons">
-    <button id="randomizeBtn">Randomize</button>
-    <button id="quoteBtn">One Piece quote</button>
-    <button id="processBtn">Generate Poneglyph</button>
+  <div class="tool-buttons">
+    <button id="randomizeBtn" class="tool-button"></button>
+    <button id="clearBtn" class="tool-button"></button>
+    <button id="quoteBtn" class="tool-button"></button>
+    <button id="processBtn" class="tool-button"></button>
   </div>
 
   <script src="assets/translations.js"></script>
