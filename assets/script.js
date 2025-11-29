@@ -8,6 +8,8 @@ const noteFontElement = document.getElementById('note-font');
 const noteRepoElement = document.getElementById('note-repo');
 const langButtons = document.querySelectorAll('.lang-btn');
 
+let currentLang = localStorage.getItem('lang') || 'en-US';
+
 const randomize = () => {
   const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz .';
   let randomText = '';
@@ -19,8 +21,17 @@ const randomize = () => {
   return randomText;
 }
 
-// `translations` moved to `assets/translations.js` (loaded before this script)
-let currentLang = localStorage.getItem('lang') || 'en-US';
+const generateQuote = () => {
+  const possibleQuotes = (typeof translations !== 'undefined' && translations[currentLang] && translations[currentLang].quotes) ? translations[currentLang].quotes : (typeof translations !== 'undefined' ? translations['en-US'].quotes : []);
+  if (!possibleQuotes || possibleQuotes.length === 0) return '';
+  const randomIndex = Math.floor(Math.random() * possibleQuotes.length);
+  return possibleQuotes[randomIndex];
+};
+
+const generatePoneglyph = () => {
+  const text = inputArea.value || '';
+  resultArea.textContent = text;
+};
 
 const updateUIText = (lang) => {
   const t = (typeof translations !== 'undefined' && translations[lang]) ? translations[lang] : (typeof translations !== 'undefined' ? translations['en-US'] : null);
@@ -35,18 +46,7 @@ const updateUIText = (lang) => {
   // update aria-pressed on buttons
   langButtons.forEach(b => b.setAttribute('aria-pressed', b.dataset.lang === lang ? 'true' : 'false'));
   localStorage.setItem('lang', lang);
-};
 
-const generateQuote = () => {
-  const possibleQuotes = (typeof translations !== 'undefined' && translations[currentLang] && translations[currentLang].quotes) ? translations[currentLang].quotes : (typeof translations !== 'undefined' ? translations['en-US'].quotes : []);
-  if (!possibleQuotes || possibleQuotes.length === 0) return '';
-  const randomIndex = Math.floor(Math.random() * possibleQuotes.length);
-  return possibleQuotes[randomIndex];
-};
-
-const generatePoneglyph = () => {
-  const text = inputArea.value || '';
-  resultArea.textContent = text;
 };
 
 // Event listeners to buttons
@@ -54,9 +54,11 @@ const generatePoneglyph = () => {
 langButtons.forEach(btn => {
   btn.addEventListener('click', (e) => {
     const lang = btn.dataset.lang;
-    if (!lang) return;
+    if (!lang || lang == currentLang) return;
     currentLang = lang;
     updateUIText(lang);
+    inputArea.value = generateQuote();
+    generatePoneglyph();
   });
 });
 
