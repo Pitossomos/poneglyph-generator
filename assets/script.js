@@ -1,6 +1,7 @@
 const inputArea = document.getElementById('input');
 const processBtn = document.getElementById('processBtn');
 const randomizeBtn = document.getElementById('randomizeBtn');
+const clearBtn = document.getElementById('clearBtn');
 const quoteBtn = document.getElementById('quoteBtn');
 const resultArea = document.getElementById('result');
 const titleElement = document.getElementById('title');
@@ -38,6 +39,11 @@ quoteBtn.addEventListener('click', () => {
 
 randomizeBtn.addEventListener('click', () => {
   inputArea.value = randomize();
+  generatePoneglyph();
+});
+
+clearBtn.addEventListener('click', () => {
+  inputArea.value = '';
   generatePoneglyph();
 });
 
@@ -80,6 +86,8 @@ function updateUIText (lang) {
   if (randomizeBtn) randomizeBtn.textContent = t.randomizeBtn;
   if (quoteBtn) quoteBtn.textContent = t.quoteBtn;
   if (processBtn) processBtn.textContent = t.processBtn;
+  if (clearBtn) clearBtn.textContent = t.clearBtn;
+
   // update aria-pressed on buttons
   langButtons.forEach(b => b.setAttribute('aria-pressed', b.dataset.lang === lang ? 'true' : 'false'));
   localStorage.setItem('lang', lang);
