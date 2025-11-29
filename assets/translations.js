@@ -9,6 +9,7 @@ const translations = {
     noteRepo: `See code repository and suggest improvements at: <img src="./icons/github-mark.svg" width="16" height="16" alt="GitHub Logo"/> <a href="https://github.com/Pitossomos/poneglyph-generator" target="_blank" rel="noopener">GitHub Repository</a>`,
     randomizeBtn: 'Randomize',
     quoteBtn: 'One Piece quote',
+    clearBtn: 'Clear',
     processBtn: 'Generate Poneglyph',
     quotes: [
       "If you don't take risks, you can't create a future. No matter how difficult or impossible it seems, never give up on what you truly want to achieve. The King of the Pirates title is worth chasing, and I will claim it. (Monkey D. Luffy)",
@@ -49,6 +50,7 @@ const translations = {
     noteFont: `Este código usa uma fonte personalizada chamada <i>Poneglyph.ttf</i> compartilhada por <a href="https://www.reddit.com/r/OnePiece/comments/9hyc1g/poneglyph_font_ttf_file/" target="_blank" rel="noopener">Killiam Frost no Reddit</a>.`,
     noteRepo: `Veja o repositório e sugira melhorias em: <img src="./icons/github-mark.svg" width="16" height="16" alt="GitHub Logo"/> <a href="https://github.com/Pitossomos/poneglyph-generator" target="_blank" rel="noopener">Repositório no GitHub</a>`,
     randomizeBtn: 'Aleatorizar',
+    clearBtn: 'Limpar',
     quoteBtn: 'Citação One Piece',
     processBtn: 'Gerar Poneglyph',
     quotes: [
