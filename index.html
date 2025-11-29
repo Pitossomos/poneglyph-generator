@@ -5,34 +5,37 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>Poneglyph Generator</title>
 	<link rel="stylesheet" href="assets/style.css">
-  <script src="quotes/us.js"></script>
 </head>
 <body>
   <nav class="navbar" role="navigation" aria-label="Main navigation">
-    <h1>Poneglyph Generator</h1>
+    <h1 id="title">Poneglyph Generator</h1>
 
-    <div class="buttons" role="group" aria-label="Language selection">
-      <a href="./index.html"><img width="32" height="21" src="icons/US.png" alt="US-flag"></img></a>
-      <a href="./br.html"><img width="32" height="21" src="icons/BR.png" alt="Brazil-flag"></img></a>
+    <div class="lang-controls" role="group" aria-label="Language selection">
+      <button id="lang-br" class="lang-btn" data-lang="pt-BR" aria-pressed="false" title="Português (BR)" aria-label="Português do Brasil">
+        <img src="icons/BR.png" alt="Bandeira do Brasil" width="32" height="21">
+      </button>
+      <button id="lang-us" class="lang-btn" data-lang="en-US" aria-pressed="true" title="English (US)" aria-label="English (United States)">
+        <img src="icons/US.png" alt="US flag" width="32" height="21">
+      </button>
     </div>
   </nav>
 
-	<div class="note">
-    <p>
-      This code uses a custom font called <i>Poneglyph.ttf</i> shared by
-        <a href="https://www.reddit.com/r/OnePiece/comments/9hyc1g/poneglyph_font_ttf_file/">Killiam Frost at Reddit</a>.
-    </p>
-    <p>
-      See code repository and sugest improvements at:
-      <img src="./icons/github-mark.svg" width="16" height="16" alt="GitHub Logo"/>
-      <a href="https://github.com/Pitossomos/poneglyph-generator">GitHub Repository</a>
-    </p>
-  </div>
+    <div class="note">
+      <p id="note-font">
+        This code uses a custom font called <i>Poneglyph.ttf</i> shared by
+          <a href="https://www.reddit.com/r/OnePiece/comments/9hyc1g/poneglyph_font_ttf_file/" target="_blank" rel="noopener">Killiam Frost at Reddit</a>.
+      </p>
+      <p id="note-repo">
+        See code repository and sugest improvements at:
+        <img src="./icons/github-mark.svg" width="16" height="16" alt="GitHub Logo"/>
+        <a href="https://github.com/Pitossomos/poneglyph-generator" target="_blank" rel="noopener">GitHub Repository</a>
+      </p>
+    </div>
 
-  <main class="wrapper-div">
-    <textarea id="input" placeholder="Type or paste text here..." rows="6"></textarea>
-    <div id="result" class="poneglyph" aria-live="polite"></div>
-  </main>
+    <main class="wrapper-div">
+      <textarea id="input" data-i18n-placeholder="inputPlaceholder" placeholder="Type or paste text here..." rows="6"></textarea>
+      <div id="result" class="poneglyph" aria-live="polite"></div>
+    </main>
 
   <div class="buttons">
     <button id="randomizeBtn">Randomize</button>
@@ -40,6 +43,7 @@
     <button id="processBtn">Generate Poneglyph</button>
   </div>
 
+  <script src="assets/translations.js"></script>
   <script src="assets/script.js"></script>
 </body>
 </html>
