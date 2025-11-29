@@ -72,7 +72,15 @@ function generateQuote () {
 };
 
 function generatePoneglyph () {
-  const text = inputArea.value || '';
+  // Read input (fallback to empty string)
+  const raw = (inputArea && inputArea.value) ? inputArea.value : '';
+
+  let text = raw.normalize('NFD')       // Separa letras e acentos
+    .replace(/[\u0300-\u036f]/g, '')    // Remove acentos
+    .replace(/[^a-zA-Z0-9\s]/g, '')     // Remove caracteres especiais
+    .replace(/\s+/g, ' ')               // Remove espaços extras
+    .trim();                            // Remove espaços no início/fim
+
   resultArea.textContent = text;
 };
 
